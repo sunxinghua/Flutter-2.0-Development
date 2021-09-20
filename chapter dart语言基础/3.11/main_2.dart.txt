@@ -1,0 +1,28 @@
+  class Salary {
+   //被弃用的方法，可用但不推荐使用
+   @deprecated 
+   void salary_Engineer(){
+      print('工程师薪水计算公式');
+   }
+   //推荐使用的方法 
+   void salary_TestingEngineer(){
+      print('测试工程师薪水计算公式');
+  }
+  //推荐使用的方法 
+  void salary_seniorEngineer(){  
+     print('高级工程师薪水计算公式');
+  }
+  //推荐使用的方法 
+  void salary_manager(){ 
+     print('产品经理薪水计算公式');
+  }
+ }
+ void main(){
+   //实例化salary类
+   Salary salary = Salary();
+   //薪水核算标准改变，不推荐使用此方法       
+   salary.salary_Engineer(); 
+   salary.salary_TestingEngineer(); 
+   salary.salary_seniorEngineer();
+   salary.salary_manager(); 
+ }

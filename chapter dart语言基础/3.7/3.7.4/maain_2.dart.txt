@@ -1,0 +1,40 @@
+abstract class Animal {
+       //动物名称属性
+      String name="";
+      printName() {
+         print('名字是:${name}');
+      }
+      eat(); //抽象方法
+    }
+    //抽象类作为接口
+   abstract class SwimAbility {
+       swim();
+   }
+   //普通类作为接口
+   class RunAbility {
+       void run(){} //抽象方法,空方法
+   }
+   // 在子类里面必须实现抽象类里面的抽象方法
+   class Dog extends Animal implements SwimAbility,RunAbility {
+      @override
+      eat() {
+          print(this.name+'有进食能力');
+      }
+     //实现RunAbility接口并重写run方法
+     @override
+     run() {
+         print(this.name+'能跑步');
+     }
+    //实现SwimAbility接口并重写swim方法
+     swim() {
+       print(this.name+'会游泳');
+    }
+  }
+  main() {
+    Dog dog = new Dog();
+    dog.name="小狗";
+    dog.printName();
+    dog.eat();
+    dog.run();
+    dog.swim();
+ }

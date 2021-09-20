@@ -1,0 +1,24 @@
+ class Person{
+ 	String name="";num age=0;
+	Person(this.name, this.age); 
+	void printInfo(){
+		print("基类∶姓名∶${this.name}，年龄∶${this.age}"); 
+	}
+	void work() {print("基类∶${this.name}在工作");}
+ }
+ class Man extends Person{
+	Man(String name,num age):super(name,age);
+	//用元数据 @override 表示覆写父类的方法
+	@override
+	void printInfo(){
+		print("子类∶姓名∶ ${this.name}，年龄∶${this.age}");}
+	@override //用元数据 @override 表示覆写父类的方法
+	work(){print("子类∶${this.name}在工作");}
+ }
+ main(){
+	Man boy=new Man('李四',20);
+	boy.printInfo();
+	//子类：姓名：李四，年龄： 20
+	 boy.work();
+	// 子类∶李四在工作 
+ }

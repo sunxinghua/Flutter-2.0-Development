@@ -1,0 +1,36 @@
+class Animal {
+      void eat(){
+           print('动物会吃');
+       }
+      void run(){
+         print('动物会跑');
+     }
+   }
+   class Human extends Animal {
+    @override
+     void eat(){
+        print('人吃熟肉');
+     }
+    @override
+    void run(){
+        print('人会直立跑步');
+    }
+ }
+ class Dog extends Animal {
+    @override
+    void eat(){
+        print('狗吃骨头');
+    }
+    @override
+    void run(){
+        print('狗四肢着地跑步');
+    }
+ }
+ main(){
+   var human = new Human();
+   human.eat();
+   human.run();
+   Dog dog= Dog();
+   dog.eat();
+   dog.run();
+ }

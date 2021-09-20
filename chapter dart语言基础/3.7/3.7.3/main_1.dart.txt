@@ -1,0 +1,23 @@
+class Animal {
+     void eat(){
+        print('动物会吃');
+     }
+     void run(){
+        print('动物会跑');
+     }
+   }
+   class Human extends Animal {
+    void say(){
+       print('人会说');
+    }
+    void study(){
+       print('人会学习');
+    }
+  }
+  main(){
+    var human = new Human();
+    human.eat();
+    human.run();
+    human.say();
+    human.study();
+ }

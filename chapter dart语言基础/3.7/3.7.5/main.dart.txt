@@ -1,0 +1,37 @@
+class Person{
+	 String name="";
+     num age=0;
+	 Person(this.name,this.age);
+	 printInfo(){
+        print('姓名：'+'${this.name}'+'--年龄：'+'${this.age}');
+    	 }
+     void run(){
+        print("Person Run");
+    }  
+  }
+ class A {
+    String info="this is A";
+    void printA(){
+       print("A");
+    }
+    void run(){
+      print("A Run");
+    }
+ }
+ class B {  
+    void printB(){
+       print("B");
+    }
+    void run(){
+       print("B Run");
+    }
+ }
+ //Person有构造方法不能使用mixin
+ class C extends Person with B,A{//如果A、B中有同样的方法则谁在后面就执行谁的方法
+     C(String name, num age) : super(name, age);
+ }
+ void main(){  
+    var c=new C('张三',20);  
+    c.printInfo();
+    c.run();
+ }

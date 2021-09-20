@@ -1,0 +1,8 @@
+void main(){
+    print("This is main first");
+    //立即执行 
+    Future.sync((){print("a sync task");});
+    //最后执行 
+    Future((){ print("a future task");});
+    print("This is main last");
+ }

@@ -1,0 +1,19 @@
+void run() {
+    print(DateTime.now());
+    Future.wait([
+      Future.delayed(new Duration(seconds: 2), () {
+        return '姓名：张三';
+      }),
+     Future.delayed(new Duration(seconds: 2), () {
+        return '学号：20191002';
+      })
+   ]).then((results){
+     print(results[0] + '  ' + results[1]);
+     print(DateTime.now());
+   }).catchError((e){
+     print(e);
+   });
+ }
+ void main() {
+   run();
+ }

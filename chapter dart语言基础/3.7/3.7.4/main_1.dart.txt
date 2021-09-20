@@ -1,0 +1,35 @@
+abstract class Animal {
+     eat(); //抽象方法
+     run(); //抽象方法
+     printInfo() {
+      print('我是抽象类中的一个普通方法');
+     }
+   }
+   // 在子类里面必须实现抽象类里面的抽象方法
+   class Dog extends Animal {
+    @override
+    eat() {
+      print('狗吃骨头');
+    }
+    @override
+    run() {
+       print('狗四肢着地跑步');
+   }
+ }
+  class Human extends Animal {
+     @override
+     eat(){
+        print('人吃熟肉');
+    }
+    @override
+    run(){
+        print('人会直立跑步');
+   }
+ }
+ main(){
+   Dog dog = new Dog();
+   dog.eat();
+   Human human = new Human();
+   human.eat();
+   human.printInfo();
+ }
