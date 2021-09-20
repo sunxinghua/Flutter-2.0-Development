@@ -1,0 +1,39 @@
+import 'package:flutter/material.dart';
+void main() => runApp(MyApp());
+class MyApp extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      title: '提示对话框组件示例',
+      home: Scaffold(
+        appBar: AppBar(
+          title: Text('提示对话框组件示例'),
+        ),
+        body: Center(
+          child: AlertDialog(
+            title: Text('提示'), //对话框标题
+            content: SingleChildScrollView(
+              //对话框内容部分
+              child: ListBody(
+                children: <Widget>[
+                  Text('文件已更新是否要关闭?'),
+                  Text('一旦关闭文件不可保存！'),
+                ],
+              ),
+            ),
+            actions: <Widget>[
+              FlatButton(
+                child: Text('确定'),
+                onPressed: () {},
+              ),
+              FlatButton(
+                child: Text('取消'),
+                onPressed: () {},
+              ),
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+}

@@ -1,0 +1,48 @@
+import 'package:flutter/material.dart';
+void main() => runApp(MyApp());
+//菜单项
+enum Item { Groupchats, AddFriend, Scan, Receiving, Help }
+class MyApp extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      title: '弹出菜单组件示例',
+      home: Scaffold(
+        appBar: AppBar(
+          title: Text('弹出菜单组件示例'),
+        ),
+        body: Center(
+          child: FlatButton(
+            onPressed: () {},
+            child: PopupMenuButton<ConferenceItem>(
+              onSelected: (ConferenceItem result) {},
+              itemBuilder: (BuildContext context) =>//菜单项构造器
+              <PopupMenuEntry<ConferenceItem>>[
+                const PopupMenuItem(//菜单项
+                  value: ConferenceItem.Groupchats,
+                  child: Text('发起群聊'),
+                ),
+                const PopupMenuItem(
+                  value: ConferenceItem.AddFriend,
+                  child: Text('添加朋友'),
+                ),
+                const PopupMenuItem(
+                  value: ConferenceItem.Scan,
+                  child: Text('扫一扫'),
+                ),
+                const PopupMenuItem(
+                  value: ConferenceItem.Receiving,
+                  child: Text('收付款'),
+                ),
+                const PopupMenuItem(
+                  value: ConferenceItem.Help,
+                  child: Text('帮助与反馈'),
+                ),
+              ],
+            ),
+          ),
+        ),
+      ),
+    );
+  }
+}

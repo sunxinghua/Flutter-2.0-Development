@@ -1,0 +1,6 @@
+new MaterialApp(
+  theme: new ThemeData(
+    //Ö÷ÌâÉ«
+    primarySwatch: Colors.blue,
+ ),
+);

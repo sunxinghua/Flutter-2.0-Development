@@ -1,0 +1,56 @@
+import 'package:flutter/material.dart';
+void main() => runApp(
+  new MaterialApp(
+    title: 'Drawer抽屉组件示例',
+    home: new LayoutDemo(),
+  ),
+);
+class LayoutDemo extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return new Scaffold(
+      appBar: AppBar(
+        title: Text('Drawer抽屉组件示例'),
+      ),
+      drawer: Drawer(
+        child: ListView(
+          children: [
+            //设置用户信息 头像、用户名、Email等
+            UserAccountsDrawerHeader(
+              accountName: new Text(
+                "小章的店铺",
+              ),
+              accountEmail: new Text(
+                "店铺简介：  专属女生的小店，快来选购吧！",
+              ),
+              //设置当前用户头像
+              currentAccountPicture: new CircleAvatar(
+                backgroundImage: new AssetImage("img/1.jpg"),
+              ),
+              onDetailsPressed: () {},
+              //属性本来是用来设置当前用户的其他账号的头像 这里用来当店铺二维码图片展示
+              otherAccountsPictures: [
+                new Container(
+                  child: Image.asset('img/code.jpg'),
+                ),
+              ],
+            ),
+            ListTile(
+              leading: new CircleAvatar(child: Icon(Icons.work)),//导航栏菜单
+              title: Text('包包'),
+            ),
+            ListTile(
+              leading: new CircleAvatar(child: Icon(Icons.photo)),
+              title: Text('女装'),
+            ),
+            ListTile(
+              leading: new CircleAvatar(child: Icon(Icons.games)),
+              title: Text('美妆'),
+            ),
+          ],
+        ),
+      ),
+    );
+
+  }
+}

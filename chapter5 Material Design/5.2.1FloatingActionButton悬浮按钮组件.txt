@@ -1,0 +1,50 @@
+import 'package:flutter/material.dart';
+
+void main() => runApp(MyApp());
+
+class MyApp extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      title: '悬停按钮组件示例',
+      home: Scaffold(
+        appBar: AppBar(
+          title: Text('悬停按钮组件示例'),
+        ),
+        body: Center(
+          child: Text(
+            '悬停按钮组件示例',
+            style: TextStyle(fontSize: 20.0),
+          ),
+        ),
+        floatingActionButton: new Builder(builder: (BuildContext context) {
+          return new FloatingActionButton(
+            child: const Icon(Icons.add),
+            //提示信息
+            tooltip: "请点击悬停按钮组件",
+            //前景色为黑色色
+            foregroundColor: Colors.black,
+            //背景色为浅蓝色
+            backgroundColor: Colors.lightBlue,
+            //未点击阴影值
+            elevation: 6.0,
+            //点击阴影值
+            highlightElevation: 24.0,
+            onPressed: () {
+              //点击回调事件 弹出一句提示语句
+              Scaffold.of(context).showSnackBar(new SnackBar(
+                content: new Text("你点击了悬停按钮"),
+              ));
+            },
+            mini: false,
+            //圆形边
+            shape: new CircleBorder(),
+            isExtended: false,
+          );
+        }),
+        floatingActionButtonLocation:
+        FloatingActionButtonLocation.centerFloat, //居中放置 位置可以设置成左中右
+      ),
+    );
+  }
+}
