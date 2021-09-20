@@ -1,0 +1,41 @@
+import 'package:flutter/material.dart';
+import 'package:flutter/cupertino.dart';
+void main() => runApp(MyApp());
+class MyApp extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      title: 'Cupertino对话框组件示例',
+      home: Scaffold(
+        appBar: AppBar(
+          title: Text('Cupertino对话框组件示例'),
+        ),
+        body: Center(
+          child: CupertinoAlertDialog(
+            title: Text('提示'), //对话框标题
+            content: SingleChildScrollView(
+              //对话框内容部分
+              child: ListBody(
+                children: [
+                  Text('文件已更新是否要关闭?'),
+                  Text('一旦关闭文件不可保存！'),
+                ],
+              ),
+            ),
+            actions: [
+              CupertinoDialogAction(
+                child: Text('确定'),
+                onPressed: () {},
+              ),
+              CupertinoDialogAction(
+                child: Text('取消'),
+                onPressed: () {},
+              ),
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+}
+

@@ -1,0 +1,25 @@
+import 'package:flutter/material.dart';
+import 'package:flutter/cupertino.dart';
+void main() => runApp(MyApp());
+class MyApp extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      title: 'Cupertino按钮组件示例',
+      home: Scaffold(
+        appBar: AppBar(
+          title: Text('Cupertino按钮组件示例'),
+        ),
+        body: Center(
+          child: CupertinoButton(
+            child: Text(//按钮label
+              'Cupertino按钮组件',
+            ),
+            color: Colors.red,//按钮颜色
+            onPressed: (){},//按下事件回调
+          ),
+        ),
+      ),
+    );
+  }
+}
